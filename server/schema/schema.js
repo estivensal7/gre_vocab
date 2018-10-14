@@ -20,6 +20,8 @@ const WordType = new GraphQLObjectType({
                 word: { type: GraphQLString },
                 definition: { type: GraphQLString },
                 quizId: { type: GraphQLString },
+                questionNumber: { type: GraphQLString },
+                randomDefNumber: { type: GraphQLString },
                 quiz: {
                         type: QuizType,
                         resolve(parent, args){
@@ -48,7 +50,7 @@ const RootQuery = new GraphQLObjectType({
         fields: {
                 word: {
                         type: WordType,
-                        args: { id: { type: GraphQLID } },
+                        args: { id: { type: GraphQLID}, quizId: { type: GraphQLString} },
                         resolve(parent, args) {
                                 //code to get data from db / other source
                                 // return _.find(words, { id: args.id });
@@ -70,6 +72,14 @@ const RootQuery = new GraphQLObjectType({
                         resolve(parent, args) {
                                 // return words
                                 return Word.find({});
+                        }
+                },
+
+                quizzes: {
+                        type: new GraphQLList(QuizType),
+                        resolve(parent, args) {
+                                // return quizzes
+                                return Quiz.find({});
                         }
                 }
         }
