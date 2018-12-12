@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import QuizListCards from '../../Components/QuizListCards/QuizListCards';
 
 class QuizList extends Component {
+	
 	render() {
 		return (
                         <div className="quizListPageContainer">

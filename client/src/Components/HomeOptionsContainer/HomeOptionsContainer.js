@@ -11,6 +11,8 @@ import {
         Col 
 } from 'reactstrap';
 
+import { Link } from "react-router-dom";
+
 const HomeOptionsContainer = (props) => {
         return (
                 <div>
@@ -33,7 +35,7 @@ const HomeOptionsContainer = (props) => {
                                                                 <CardHeader>Quizzes</CardHeader>
                                                                 <CardBody>
                                                                         <CardText>Test your vocab skills!</CardText>
-                                                                        <Button>Take A Quiz!</Button>
+                                                                        <Button tag={Link} to='/quiz-list'>Take A Quiz!</Button>
                                                                 </CardBody>
                                                         </Card>
                                                 </Col>

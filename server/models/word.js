@@ -6,7 +6,9 @@ const wordSchema = new Schema({
         definition: String,
         quizId: String,
         questionNumber: String,
-        randomDefNumber: String
+        randomDefOne: String,
+        randomDefTwo: String,
+        randomDefThree: String
 });
 
 module.exports = mongoose.model('Word', wordSchema);

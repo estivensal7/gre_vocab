@@ -21,7 +21,9 @@ const WordType = new GraphQLObjectType({
                 definition: { type: GraphQLString },
                 quizId: { type: GraphQLString },
                 questionNumber: { type: GraphQLString },
-                randomDefNumber: { type: GraphQLString },
+                randomDefOne: { type: GraphQLString },
+                randomDefTwo: { type: GraphQLString },
+                randomDefThree: { type: GraphQLString },
                 quiz: {
                         type: QuizType,
                         resolve(parent, args){

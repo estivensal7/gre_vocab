@@ -5,9 +5,18 @@ const getQuizzesQuery = gql`
                 quizzes {
                         id
                         quizName
+                        words {
+                                id
+                                word
+                                definition
+                                questionNumber
+                                randomDefOne
+                                randomDefTwo
+                                randomDefThree
+                        }
                 }
         }
-`
+`;
 
 const getWordsQuery = gql`
 {
@@ -17,26 +26,15 @@ const getWordsQuery = gql`
                 definition
                 quizId
                 questionNumber
-                randomDefNumber
+                randomDefOne
+                randomDefTwo
+                randomDefThree
                 quiz{
                         id
                         quizName
                 }
         }
 }
-`
+`;
 
-const getSingleQuiz = gql`
-        query getSingleQuizQuery($id: String!) {
-                quiz (id: $id) {
-                        id
-                        quizName
-                        words {
-                                word
-                                definition
-                        }
-                }
-        }
-`
-
-export { getQuizzesQuery, getWordsQuery, getSingleQuiz };
+export { getQuizzesQuery, getWordsQuery };

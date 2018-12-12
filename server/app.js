@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 
 //connect to mLab database
-mongoose.connect('mongodb://estivensal7:Varsity94@ds223343.mlab.com:23343/gre_vocab');
+mongoose.connect('mongodb://estivensal7:Varsity94@ds223343.mlab.com:23343/gre_vocab', { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
 	console.log('connected to database.');
 });
